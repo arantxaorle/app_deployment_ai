@@ -35,6 +35,7 @@ from bs4 import BeautifulSoup
 from functools import wraps
 from typing import Dict, List, Tuple, Optional
 from streamlit_autorefresh import st_autorefresh
+from langchain_openai import OpenAIEmbeddings
 from langchain_community.document_loaders import TextLoader
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -186,7 +187,8 @@ def parse_portfolio_input(text: str) -> Dict[str, int]:
 def build_or_load_vectorstore(kb_path: str, openai_api_key: str) -> FAISS:
     try:
         logger.info("Initializing embeddings and vectorstore")
-        embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
+        #embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
+        embeddings = OpenAIEmbeddings(model="text-embedding-3-small", api_key=openai_api_key)
         index_file = FAISS_INDEX_DIR / "index.faiss"
         meta_file = FAISS_INDEX_DIR / "index.pkl"
 
