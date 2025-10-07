@@ -11,3 +11,4 @@ langchain_community
 faiss-cpu
 openai
 reportlab
+langchain_openai
