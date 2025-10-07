@@ -35,7 +35,7 @@ from bs4 import BeautifulSoup
 from functools import wraps
 from typing import Dict, List, Tuple, Optional
 from streamlit_autorefresh import st_autorefresh
-from langchain.document_loaders import TextLoader
+from langchain_community.document_loaders import TextLoader
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import FAISS
